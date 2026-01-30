@@ -52,6 +52,11 @@ Thus, for example, `5!!` is `5 * 3 * 1 = 15` and `8!!` is `8 * 6 * 4 * 2 = 384`.
 ## Usage
 
 ```javascript
+import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-factorial2f/tags). For example,
+
+```javascript
 import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@v0.1.0-deno/mod.js';
 ```
 
@@ -107,7 +112,7 @@ var v = factorial2f( NaN );
 ```javascript
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@deno/mod.js';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@deno/mod.js';
-import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@v0.1.0-deno/mod.js';
+import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@deno/mod.js';
 
 var x = discreteUniform( 10, 0, 56, {
     'dtype': 'int32'
