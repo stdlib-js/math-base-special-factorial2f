@@ -52,7 +52,7 @@ Thus, for example, `5!!` is `5 * 3 * 1 = 15` and `8!!` is `8 * 6 * 4 * 2 = 384`.
 ## Usage
 
 ```javascript
-import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@esm/index.mjs';
+import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@v0.1.1-esm/index.mjs';
 ```
 
 #### factorial2f( n )
@@ -112,7 +112,7 @@ var v = factorial2f( NaN );
 
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
 import logEachMap from 'https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@esm/index.mjs';
-import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@esm/index.mjs';
+import factorial2f from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@v0.1.1-esm/index.mjs';
 
 var x = discreteUniform( 10, 0, 56, {
     'dtype': 'int32'
