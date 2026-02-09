@@ -45,43 +45,32 @@ Thus, for example, `5!!` is `5 * 3 * 1 = 15` and `8!!` is `8 * 6 * 4 * 2 = 384`.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/math-base-special-factorial2f
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-factorial2f = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@umd/browser.js' )
-```
-The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/math-base-special-factorial2f/tags). For example,
-
-```javascript
-factorial2f = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@v0.1.1-umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var factorial2f = require( 'path/to/vendor/umd/math-base-special-factorial2f/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.factorial2f;
-})();
-</script>
+var factorial2f = require( '@stdlib/math-base-special-factorial2f' );
 ```
 
 #### factorial2f( n )
@@ -133,26 +122,16 @@ var v = factorial2f( NaN );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each-map@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-factorial2f@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var logEachMap = require( '@stdlib/console-log-each-map' );
+var factorial2f = require( '@stdlib/math-base-special-factorial2f' );
 
 var x = discreteUniform( 10, 0, 56, {
     'dtype': 'int32'
 });
 
 logEachMap( 'factorial2f(%d) = %0.1f', x, factorial2f );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -161,7 +140,88 @@ logEachMap( 'factorial2f(%d) = %0.1f', x, factorial2f );
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/math/base/special/factorial2f.h"
+```
+
+#### stdlib_base_factorial2f( n )
+
+Evaluates the [double factorial][double-factorial] of `n` as a single-precision floating-point number.
+
+```c
+float out = stdlib_base_factorial2f( 3.0f );
+// returns 3.0f
+```
+
+The function accepts the following arguments:
+
+-   **n**: `[in] float` input value.
+
+```c
+float stdlib_base_factorial2f( const float n );
+```
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/math/base/special/factorial2f.h"
+#include <stdio.h>
+
+int main( void ) {
+    const float x[] = { 1.0f, 10.0f, 50.0f, 56.0f, 57.0f };
+
+    float b;
+    int i;
+    for ( i = 0; i < 5; i++ ) {
+        b = stdlib_base_factorial2f( x[ i ] );
+        printf ( "factorial2f(%f) = %f\n", x[ i ], b );
+    }
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -210,8 +270,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/math-base-special-factorial2f.svg
 [npm-url]: https://npmjs.org/package/@stdlib/math-base-special-factorial2f
 
-[test-image]: https://github.com/stdlib-js/math-base-special-factorial2f/actions/workflows/test.yml/badge.svg?branch=v0.1.1
-[test-url]: https://github.com/stdlib-js/math-base-special-factorial2f/actions/workflows/test.yml?query=branch:v0.1.1
+[test-image]: https://github.com/stdlib-js/math-base-special-factorial2f/actions/workflows/test.yml/badge.svg?branch=main
+[test-url]: https://github.com/stdlib-js/math-base-special-factorial2f/actions/workflows/test.yml?query=branch:main
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/math-base-special-factorial2f/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/math-base-special-factorial2f?branch=main
